@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Shopper's Paradise</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+	<style>
+		*{box-sizing:border-box;}
+		
+		.slide{
+			display: none;
+		}
+		
+		.navbar{
+			width:100%;
+			background-color: #4CAF50;
+			overflow: auto;
+		}
+
+		.navbar a {
+		  	float: left;
+		  	text-align: center;
+		  	padding: 10px 90px 10px 14.5px;
+		  	color: white;
+		 	text-decoration: none;
+  		 	font-size: 30px;
+		}
+
+		.navbar a:hover {
+		  	background-color: #000;
+		}
+		
+		.welcome{
+			text-align: center;
+			color: white;
+			background-color: #4CAF50;
+		}
+		
+		.shoppar{
+			font-size: 200px;
+			animation: color-change 1s infinite;
+			color: purple;
+			font-family: URW Chancery L, cursive;
+		}
+		
+		@keyframes color-change {
+ 			 0% { color: red; }
+ 			 50% { color: purple; }
+ 			 100% { color:	red; }
+			}
+			
+		.slideshow{
+			max-width:1500px;
+			position:relative;
+			margin:auto;
+			margin-top:5px;
+		}
+		
+		.fade {
+  		 -webkit-animation-name: fade;
+  		 -webkit-animation-duration: 1.5s;
+  		  animation-name: fade;
+  		  animation-duration: 1.5s;
+		}
+		
+		@-webkit-keyframes fade {
+  			from {opacity: .4}
+  			to {opacity: 1}
+		}
+
+		@keyframes fade {
+		  	from {opacity: .4}
+  			to {opacity: 1}
+		}
+		
+		.social{
+			width:100%;
+			background-color: #4CAF50;
+			overflow: auto;
+		}
+		
+		.social a{
+			float: left;
+		  	text-align: center;
+		  	padding: 10px 178px 10px 178px;
+		  	color: white;
+		 	text-decoration: none;
+  		 	font-size: 30px;
+		}
+		
+		.social a:hover{
+			background-color: #000;
+		}
+		
+		.so{
+			padding: 10px;
+  			font-size: 60px;
+  			width: 100px;
+  			text-align: center;
+  			text-decoration: none;
+		}
+		
+	</style>
+	</head>
+	<body>
+		<div class="navbar">
+			<a href=index.html><i class="fa fa-home"></i> Home</a>
+			<a href=#Search><i class="fa fa-search"></i> Search</a>
+			<a href=#Categories><i class="fa fa-book"></i> Categories</a>
+			<a href="about.html"><i class="fa fa-id-card"></i> About</a>
+			<a href=#Contact><i class="fa fa-envelope"></i> Contact Us</a>
+			<a href=login.html><i class="fa fa-user"></i> Login</a>
+			<a href=#Signup><i class="fa fa-sign-in"></i> Sign Up</a>
+		</div>
+		
+		<div class="welcome">
+			<h2>Welcome</h2>
+			<h4>To</h4>
+			<h class="shoppar">💝️ Shopper's Paradise 💝️</h>
+		</div>
+		
+		<div class="slideshow">
+			
+			<div class="slide fade">
+				<img src="images/img1.jpg" style="width:100%">
+			</div>
+			
+			<div class="slide fade">
+				<img src="images/img2.jpg" style="width:100%">
+			</div>
+			
+			<div class="slide fade">
+				<img src="images/img3.jpg" style="width:100%">
+			</div>
+			
+			<div class="slide fade">
+				<img src="images/img4.jpg" style="width:100%">
+			</div>
+		</div>
+		
+		<div class="social">
+			<a href=#Facebook><i class="so fa fa-facebook"></i></a>
+			<a href=#Twitter><i class="so fa fa-twitter"></i></a>
+			<a href=#Instagram><i class="so fa fa-instagram"></i></a>
+			<a href=#YouTube><i class="so fa fa-youtube"></i></a>
+		</div>
+		
+		<br>
+	</body>
+	
+	<script>
+		var slideindex = 1;
+		Slideshow();
+		
+		function Slideshow()
+		{
+			var i;
+ 			var slides = document.getElementsByClassName("slide");
+  			for (i = 0; i < slides.length; i++) {
+    		slides[i].style.display = "none";
+  			}
+  			if (slideindex > slides.length) {slideindex = 1}
+  			slides[slideindex-1].style.display = "block";
+  			slideindex++;
+  			setTimeout(Slideshow, 4000);
+		}
+	</script>
+</html>
